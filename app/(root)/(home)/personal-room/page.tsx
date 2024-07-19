@@ -1,10 +1,10 @@
 import React from "react";
 
-const Home = () => {
+const PersonalRoom = () => {
   return (
     <section className="flex size-full flex-col gap-10 text-white">
-      <div className="flex flex-col gap-5"></div>
+      <h1 className="text-3xl font-bold">Personal Room</h1>
     </section>
   );
 };
-export default Home;
+export default PersonalRoom;

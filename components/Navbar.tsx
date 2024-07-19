@@ -1,10 +1,33 @@
+import Link from "next/link";
 import React from "react";
+import Image from "next/image";
+import MobileNav from "./MobileNav";
+import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
-    <div>
-      <h1>Navbar</h1>
-    </div>
+    <nav className="flex flex-between fixed z-50 w-full bg-dark-1 px-6 lg:px-10">
+      <Link href="/" className="flex items-center gap-1">
+        <Image
+          src="/icons/logo.svg"
+          width={40}
+          height={40}
+          alt="studySync logo"
+          className="max-sm:size-10"
+        />
+        <p className="text-[26px] font-extrabold text-white max-sm:hidden">
+          StudySync
+        </p>
+      </Link>
+      <div className="flex-between gap-5">
+        {/* Clerk - User Management */}
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+
+        <MobileNav />
+      </div>
+    </nav>
   );
 };
 export default Navbar;
